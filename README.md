@@ -1,22 +1,16 @@
 # django_api
 
-This is a django application, based on minimalistic design, which has 2 REST APIs:-
-Api#1 - validate a slot with a finite set of values
-Api#2 - validate a slot with a numeric value extracted and constraints on the value extracted
-
 DOCKER IMAGE SIZE == 84.8 MB
 
 To Run the project without docker, download the project, navigate to validationapi folder and run the below command : - 
 `django-admin runserver --pythonpath=. --settings=settings`
 
-The urls/endpoints of the application are:-
-1. http://127.0.0.1:8000/finitevalues/
-2. http://127.0.0.1:8000/numericvalues/
+This is a django application, based on minimalistic design, which has 2 REST APIs:-
 
-Sample Json Requests and corresponsing Json reponses are: - 
-1. http://127.0.0.1:8000/finitevalues/
+Api#1 - validate a slot with a finite set of values
+URL/endpoint - http://127.0.0.1:8000/finitevalues/
 
-Request - 
+Sample Json Request - 
 {
   "invalid_trigger": "invalid_ids_stated",
   "key": "ids_stated",
@@ -46,7 +40,7 @@ Request -
   ]
 }
 
-Response - 
+Sample Response - 
 {
     "filled": true,
     "partially_filled": false,
@@ -56,11 +50,12 @@ Response -
     }
 }
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Api#2 - validate a slot with a numeric value extracted and constraints on the value extracted
+URL/Endpoint - http://127.0.0.1:8000/numericvalues/
 
-2. http://127.0.0.1:8000/numericvalues/
-
-Request - 
+Sample Json Request - 
 {
   "invalid_trigger": "invalid_age",
   "key": "age_stated",
@@ -81,7 +76,7 @@ Request -
   ]
 }
 
-Response - 
+Sample Response - 
 {
     "filled": true,
     "partially_filled": false,
