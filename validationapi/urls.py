@@ -1,9 +1,8 @@
-  
-from django.conf.urls import url
 import views
+from django.urls import path
 
 
 urlpatterns=[
-    url(r'finitevalues/',views.finitevalues),
-    url(r'numericvalues/',views.numericvalues)
+    path('numericvalues/',views.NumericValues.as_view(), name='numericvalues-view'),
+    path('finitevalues/', views.FiniteValues.as_view(), name='finitevalues-view')
 ]
